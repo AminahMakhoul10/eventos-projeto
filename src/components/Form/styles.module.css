@@ -1,0 +1,41 @@
+
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  
+  .input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .button {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .button:hover {
+    background: #0056b3;
+  }
+  

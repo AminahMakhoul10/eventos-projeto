@@ -1,0 +1,116 @@
+{
+  "eventos": [
+    {
+      "id": 1,
+      "titulo": "Workshop de Bioinformática Avançada",
+      "descricao": "Participe deste workshop que explora a integração entre a biologia e a tecnologia da informação, focado em técnicas avançadas de bioinformática. ",
+      "dataInicio": "2023-11-15",
+      "dataFim": "2023-11-18",
+      "local": "Universidade Federal de São Paulo",
+      "imagem": "/imagem1.jpg"
+    },
+    {
+      "id": 2,
+      "titulo": "HackTechXpo: A Maratona de Hackathon",
+      "descricao": "O HackTechXpo é um evento de maratona de hackathons que reúne desenvolvedores, programadores e hackers éticos para resolver desafios tecnológicos em tempo real. ",
+      "dataInicio": "2023-12-06",
+      "dataFim": "2023-12-07",
+      "local": "Campus TechHub",
+      "imagem": "/imagem2.jpg"
+    },
+    {
+      "id": 3,
+      "titulo": "Tech Innovate Summit",
+      "descricao": "O Tech Innovate Summit é uma conferência que reúne os principais líderes da indústria de tecnologia para discutir sobre temas de vanguarda e inovações que estão moldando o futuro da tecnologia.",
+      "dataInicio": "2023-11-15",
+      "dataFim": "2023-11-16",
+      "local": "Centro de Convenções da Cidade Techville",
+      "imagem": "/imagem3.jpg"
+    },
+    {
+      "id": 4,
+      "titulo": "Conferência de Segurança Cibernética Global",
+      "descricao": "A Conferência de Segurança Cibernética Global é o principal evento para profissionais de segurança cibernética",
+      "dataInicio": "2024-01-12",
+      "dataFim": "2024-01-14",
+      "local": ": Centro de Conferências de Segurança Cibernética",
+      "imagem": "/imagem4.jpg"
+    },
+    {
+      "id": 5,
+      "titulo": "Fórum de Inteligência Artificial Empresarial",
+      "descricao": "O Fórum de Inteligência Artificial Empresarial é um evento que reúne líderes de negócios, cientistas de dados e profissionais de IA para discutir como a IA está transformando as empresas.",
+      "dataInicio": "2024-06-08",
+      "dataFim": "2024-06-10",
+      "local": "Centro de Conferências AI Summit",
+      "imagem": "/imagem5.jpg"
+    },
+    {
+      "id": 6,
+      "titulo": "ExpoIoT: Exposição de Internet das Coisas",
+      "descricao": " A ExpoIoT é uma feira de tecnologia que se concentra na Internet das Coisas (IoT). Os participantes podem explorar produtos e serviços conectados, desde dispositivos domésticos inteligentes até soluções industriais. ",
+      "dataInicio": "2024-09-20",
+      "dataFim": "2024-09-22",
+      "local": "Centro de Exposições IoT Connect",
+      "imagem": "/imagem6.jpg"
+    },
+    {
+      "id": 7,
+      "titulo": "Conferência de Realidade Virtual e Aumentada",
+      "descricao": "A Conferência de Realidade Virtual e Aumentada reúne especialistas em RV e RA para discutir as últimas tendências e aplicações dessas tecnologias.",
+      "dataInicio": "2024-09-05",
+      "dataFim": "2024-09-07",
+      "local": "Centro de Realidade Virtual e Aumentada",
+      "imagem": "/imagem7.jpg"
+    },
+    {
+      "id": 8,
+      "titulo": "Semana do ADS: Maximizando o Sucesso em publicidade Digital",
+      "descricao": " A Semana do Ads é um evento de cinco dias dedicado à exploração de estratégias de publicidade digital e ao aprimoramento das habilidades em marketing online.",
+      "dataInicio": "2024-06-03",
+      "dataFim": "2024-06-07",
+      "local": "Centro de Conferências de Marketing Digital",
+      "imagem": "/imagem8.jpg"
+    },
+    {
+      "titulo": "cgf",
+      "descricao": "cc",
+      "dataInicio": "cgf",
+      "dataFim": "fcccccc",
+      "local": "adjhdjgd",
+      "id": 9
+    },
+    {
+      "titulo": "ssss",
+      "descricao": "ffffffffff",
+      "dataInicio": "cgf",
+      "dataFim": "xbgb nb",
+      "local": "kj",
+      "id": 10
+    },
+    {
+      "titulo": "ssss",
+      "descricao": "ffffffffff",
+      "dataInicio": "cgf",
+      "dataFim": "xbgb nb",
+      "local": "kj",
+      "id": 11
+    },
+    {
+      "titulo": "maratona de corrida",
+      "descricao": "maratoba",
+      "dataInicio": "20/01/2020",
+      "dataFim": "23/01/2020",
+      "local": "uhfgufg",
+      "id": 12
+    },
+    {
+      "titulo": "Dia de Halloween",
+      "descricao": "Uma festa traga a sua melhor fantasia",
+      "dataInicio": "31/10/2023",
+      "dataFim": "31/10/2023",
+      "local": "MMDLUHDC",
+      "id": 13
+    }
+  ]
+}

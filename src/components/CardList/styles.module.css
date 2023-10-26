@@ -1,0 +1,11 @@
+.listCard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.listCard > div{
+    width: 300px;
+}
