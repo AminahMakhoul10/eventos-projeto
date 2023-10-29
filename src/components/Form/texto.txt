@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css'
 
-
 export default function Form() {
     const [evento, setEvento] = useState({
         titulo: "",
@@ -12,10 +11,11 @@ export default function Form() {
         local:"",
     })
 
-    const [titulo, setTitulo] = useState('');
-    const [descricao, setDescricao] = useState('');
-    const [dataInicio, setDataInicio] = useState('');
-    const [dataFim, setDataFim] = useState('');
+
+    const [titulo, seTitulo] = useState('');
+    const [descricao, seDescricao] = useState('');
+    const [dataInicio, seDataInicio] = useState('');
+    const [dataFim, seDataFim] = useState('');
     const [local, setLocal] = useState('');
   
 

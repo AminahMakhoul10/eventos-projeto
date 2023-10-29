@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from './styles.module.css'
 import axios from "axios";
-
+import {format} from "date-fns"; //essa biblioteca é para formatar as datas de incio e fim e foi instalada 
 
 export default function Form() {
 
@@ -11,24 +11,26 @@ export default function Form() {
         dataInicio: "",
         dataFim: "",
         local:"",
-       
     })
-    const [titulo, seTitulo] = useState('');
-    const [descricao, seDescricao] = useState('');
-    const [dataInicio, seDataInicio] = useState('');
-    const [dataFim, seDataFim] = useState('');
+    const [titulo, setTitulo] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [dataInicio, setDataInicio] = useState('');
+    const [dataFim, setDataFim] = useState('');
     const [local, setLocal] = useState('');
-    
-  
 
   const inserirEvento = (e) => {
     e.preventDefault()
-    axios.post("http://localhost:3001/eventos", {
+
+    const dataFormatadaInicio = format(new Date(evento.dataInicio), 'dd/MM/yy')
+    const dataFormatadaFim = format(new Date(evento.dataFim), 'dd/MM/yy')
+
+    
+    axios.post("http://localhost:3001/eventos",{
       titulo:evento.titulo,
       descricao:evento.descricao,
-      dataInicio: evento.dataInicio,
-      dataFim: evento.dataFim, 
-      local: evento.local
+      dataInicio: dataFormatadaInicio,
+      dataFim: dataFormatadaFim, 
+      local: evento.local,
        
     }).then(res => console.log(res.data))
     .catch(error => console.log(error))
@@ -61,8 +63,8 @@ export default function Form() {
 
         <label htmlFor="dataInicio">Data Inicio:</label>
         <input className={styles.input}
-          type="dataInicio"
-          id="titulo"
+          type='date'
+          id="dataInicio"
           value={evento.dataInicio}
           onChange={e => setEvento({
             ...evento,
@@ -71,8 +73,8 @@ export default function Form() {
 
         <label htmlFor="dataFim">Data Fim:</label>
         <input className={styles.input}
-          type="dataFim"
-          id="titulo"
+          type='date'
+          id="dataFim"
           value={evento.dataFim}
           onChange={e => setEvento({
             ...evento,
