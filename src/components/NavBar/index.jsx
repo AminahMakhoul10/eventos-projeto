@@ -9,18 +9,11 @@ export default function Navbar(){
             <ul className={styles.link_items}>
 
                 <li>
-                <Link href="/cadastro">CadastroEvento</Link>
+                <Link href="/cadastro">Cadastrar Evento</Link>
                 </li>
                 
             </ul>
-            <ul className={styles.link_items}>
-                <li>
-                    <Link href="/">Home</Link>
-                </li>
-                <li>
-                    <Link href="/about">Sobre</Link>
-                </li>
-            </ul>
+           
         </nav>
 
     )

@@ -71,6 +71,14 @@
       "dataFim": "2024-06-07",
       "local": "Centro de Conferências de Marketing Digital",
       "imagem": "/imagem8.jpg"
+    },
+    {
+      "titulo": "Dia do estudante",
+      "descricao": "Venha participar conosco ",
+      "dataInicio": "07/10/23",
+      "dataFim": "07/10/23",
+      "local": "Ifro Campus Vilhena",
+      "id": 9
     }
   ]
 }

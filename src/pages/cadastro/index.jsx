@@ -42,7 +42,7 @@ export default function Form() {
       <div className={styles.subcontainer}>
     <form onSubmit={e => inserirEvento(e)}>
       <div>
-        <label htmlFor="titulo">Titulo:</label>
+        <label className={styles.label} htmlFor="titulo">Título:</label>
         <input className={styles.input}
           type="text"
           id="titulo"
@@ -52,7 +52,7 @@ export default function Form() {
             titulo: e.target.value 
         })} />
 
-        <label htmlFor="descricao">Descrição:</label>
+        <label className={styles.label} htmlFor="descricao">Descrição:</label>
         <input className={styles.input}
           id="descricao"
           value={evento.descricao}
@@ -61,7 +61,7 @@ export default function Form() {
             descricao: e.target.value
         })} />
 
-        <label htmlFor="dataInicio">Data Inicio:</label>
+        <label className={styles.label} htmlFor="dataInicio">Data Início:</label>
         <input className={styles.input}
           type='date'
           id="dataInicio"
@@ -71,7 +71,7 @@ export default function Form() {
             dataInicio: e.target.value
         })} />
 
-        <label htmlFor="dataFim">Data Fim:</label>
+        <label className={styles.label} htmlFor="dataFim">Data Fim:</label>
         <input className={styles.input}
           type='date'
           id="dataFim"
@@ -81,7 +81,7 @@ export default function Form() {
             dataFim: e.target.value
         })} />
 
-        <label htmlFor="local">Local:</label>
+        <label className={styles.label} htmlFor="local">Local:</label>
         <input className={styles.input}
           type="local"
           value={evento.local}
@@ -89,11 +89,23 @@ export default function Form() {
             ...evento,
             local: e.target.value
         })} />
+
+        <label className={styles.label} htmlFor="imagem">Imagem:</label>
+        <input className={styles.input}
+          type="file"
+          value={evento.imagem}
+          onChange={e => setEvento({
+            ...evento,
+            imagem: e.target.value
+        })} />
         
       </div>
+      <div className={styles.center}>
       <button type="submit" className={styles.button}>Enviar</button>
+      </div>
 
     </form>
-    </div></div>
+    </div>
+    </div>
   )
 }

@@ -74,6 +74,15 @@ export default function Form() {
             ...evento,
             local: e.target.value
         })} />
+
+        <label htmlFor="imagem">Imagem:</label>
+        <input className={styles.input}
+          type="file"
+          value={evento.imagem}
+          onChange={e => setEvento({
+            ...evento,
+            imagem: e.target.value
+        })} />
         
       </div>
       <button type="submit" className={styles.button}>Enviar</button>
