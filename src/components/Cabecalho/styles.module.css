@@ -1,34 +1,23 @@
+.cabecalho{
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: blueviolet;
+    justify-content: space-between;
+    min-width: 100%;
+    align-items: center;
+    color:white;
+
+}
 .navbar{
     display: flex;
-    justify-content: space-between;
+    list-style-type: none;
+    justify-content: flex-end;
     align-items: center;
-    padding: 1em 1.2em;
-    background-color: #333;
-    color: #e94343;
+    padding: 1em 0.8em;
     position: fixed;
-    top: 0;
+    top: 0.1px;
     left: 0;
     width: 100%;
     height: 60px;
-}
-
-.link_items{
-    display: flex;
-    list-style: none;
-}
-
-.link_items li{
-    margin-right: 1.3em;
-}
-
-.link_items a{
-    color: #ffffff;
-    text-decoration: none;
-    padding: 5px;
-    transition: .4s;
-    border-bottom: 2px solid transparent;
-}
-
-.link_items a:hover{
-    border-color: #f0e8e8;
+    box-sizing: border-box;
 }

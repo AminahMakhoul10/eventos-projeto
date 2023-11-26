@@ -1,111 +1,139 @@
 import { useState } from "react";
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from './styles.module.css'
 import axios from "axios";
-import {format} from "date-fns"; //essa biblioteca é para formatar as datas de incio e fim e foi instalada 
+import Input from "@/components/Input";
 
-export default function Form() {
 
-     const [evento, setEvento] = useState({
-        titulo: "",
-        descricao: "",
-        dataInicio: "",
-        dataFim: "",
-        local:"",
-    })
-    const [titulo, setTitulo] = useState('');
-    const [descricao, setDescricao] = useState('');
-    const [dataInicio, setDataInicio] = useState('');
-    const [dataFim, setDataFim] = useState('');
-    const [local, setLocal] = useState('');
+export default function Cadastro() {
 
-  const inserirEvento = (e) => {
-    e.preventDefault()
-
-    const dataFormatadaInicio = format(new Date(evento.dataInicio), 'dd/MM/yy')
-    const dataFormatadaFim = format(new Date(evento.dataFim), 'dd/MM/yy')
-
+ 
+  const [evento, setEvento] = useState({
+    titulo: "",
+    descricao: "",
+    dataInicio: "",
+    dataFim: "",
+    local:"",
     
-    axios.post("http://localhost:3001/eventos",{
-      titulo:evento.titulo,
-      descricao:evento.descricao,
-      dataInicio: dataFormatadaInicio,
-      dataFim: dataFormatadaFim, 
-      local: evento.local,
-       
-    }).then(res => console.log(res.data))
-    .catch(error => console.log(error))
+  })
+
+  const limparEvento = () => {
+    setEvento({
+      titulo: "",
+      descricao: "",
+      dataInicio: "",
+      dataFim: "",
+      local:"",
+    })
   }
+  const handleInputChange = (e) => {
+    const { name, value, } = e.target
+    setEvento({
+      ...evento,
+      [name]: value
+    });
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const isEmptyField = Object.values(evento).some(value => value === "")
+
+    if (isEmptyField) {
+      toast.error('Preencher todos os campos antes de prosseguir é obrigatório.');
+      return;
+    }
+
+    try {
+      await axios.post('http://localhost:3001/eventos', evento)
+      limparEvento();
+      toast.success('Evento reservado com sucesso!')
+      }catch (error) {
+        console.error(error);
+        toast.error('Não foi possivel cadastrar evento, por favor tente novamente!')
+      }
+    }
   
+    return (
+      <div className={styles.container}>
+        <div className={styles.titulo}>
+          <h1>Cadastrar novo evento</h1>
+          <ToastContainer/>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.subcontainer}>
+            <div>
+              <label htmlFor='descricao'>Título:</label>
+              <br />
+              <textarea
+                name='titulo'
+                id='titulo'
+                className={styles.textarea}
+                value={evento.titulo}
+                onChange={handleInputChange}
+              ></textarea>
+            </div>
+            <div>
+              <label htmlFor='descricao'>Descrição:</label>
+              <br />
+              <Input
+                name='descricao'
+                id='descricao'
+                type='text'
+                value={evento.descricao}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor='dataInicio'>Data Início:</label>
+              <br />
+              <Input
+              id='dataInicio'
+              type='datetime-local'
+              name='dataInicio'
+              value={evento.dataInicio}
+              onChange={handleInputChange}
+             
+            />
+            </div>
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.subcontainer}>
-    <form onSubmit={e => inserirEvento(e)}>
-      <div>
-        <label className={styles.label} htmlFor="titulo">Título:</label>
-        <input className={styles.input}
-          type="text"
-          id="titulo"
-          value={evento.titulo}
-          onChange={e => setEvento({
-            ...evento,
-            titulo: e.target.value 
-        })} />
+            <div>
+              <label htmlFor='dataFim'>Data Fim:</label>
+              <br />
+              <Input
+                id='dataFim'
+                type='datetime-local'
+                name='dataFim'
+                value={evento.dataFim}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor='local'>Local:</label>
+              <br />
+              <Input
+                id='local'
+                type='text'
+                name='local'
+                value={evento.local}
+                onChange={handleInputChange}
+              />
+            </div>
 
-        <label className={styles.label} htmlFor="descricao">Descrição:</label>
-        <input className={styles.input}
-          id="descricao"
-          value={evento.descricao}
-          onChange={e => setEvento({
-            ...evento,
-            descricao: e.target.value
-        })} />
-
-        <label className={styles.label} htmlFor="dataInicio">Data Início:</label>
-        <input className={styles.input}
-          type='date'
-          id="dataInicio"
-          value={evento.dataInicio}
-          onChange={e => setEvento({
-            ...evento,
-            dataInicio: e.target.value
-        })} />
-
-        <label className={styles.label} htmlFor="dataFim">Data Fim:</label>
-        <input className={styles.input}
-          type='date'
-          id="dataFim"
-          value={evento.dataFim}
-          onChange={e => setEvento({
-            ...evento,
-            dataFim: e.target.value
-        })} />
-
-        <label className={styles.label} htmlFor="local">Local:</label>
-        <input className={styles.input}
-          type="local"
-          value={evento.local}
-          onChange={e => setEvento({
-            ...evento,
-            local: e.target.value
-        })} />
-
-        <label className={styles.label} htmlFor="imagem">Imagem:</label>
-        <input className={styles.input}
-          type="file"
-          value={evento.imagem}
-          onChange={e => setEvento({
-            ...evento,
-            imagem: e.target.value
-        })} />
-        
+            <div>
+              <label htmlFor='img'>Imagem</label>
+              <br/>
+              <Input
+              id='img'
+              type='file'
+              name='img'
+              value={evento.img}></Input>
+            </div>
+            <div>
+              <button className={styles.botaoenviar} type='submit'>
+                Enviar</button>
+            </div>
+          </div>
+        </form>
       </div>
-      <div className={styles.center}>
-      <button type="submit" className={styles.button}>Enviar</button>
-      </div>
-
-    </form>
-    </div>
-    </div>
   )
 }

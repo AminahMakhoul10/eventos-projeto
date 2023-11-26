@@ -1,52 +1,52 @@
 import { useState } from "react";
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from './styles.module.css'
 import axios from "axios";
 import Input from "@/components/Input";
-import { ToastContainer,toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-export default function Form() {
 
-     const [evento, setEvento] = useState({
-        titulo: "",
-        descricao: "",
-        dataInicio: "",
-        dataFim: "",
-        local:"",
+export default function Cadastro() {
+
+  const [evento, setEvento] = useState({
+    titulo: "",
+    descricao: "",
+    dataInicio: "",
+    dataFim: "",
+    local:"",
+    
+  })
+
+  const limparEvento = () => {
+    setEvento({
+      titulo: "",
+      descricao: "",
+      dataInicio: "",
+      dataFim: "",
+      local:"",
     })
+  }
+  const handleInputChange = (e) => {
+    const { name, value, } = e.target
+    setEvento({
+      ...evento,
+      [name]: value
+    });
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const isEmptyField = Object.values(evento).some(value => value === "")
 
-    const limparEvento = () => {
-      setEvento({
-        titulo: "",
-        descricao: "",
-        dataInicio: "",
-        dataFim: "",
-        local:"",
-      })
+    if (isEmptyField) {
+      toast.error('Preencher todos os campos antes de prosseguir é obrigatório.');
+      return;
     }
-    const handleInputChange = (e) => {
-      const { name, value } = e.target
-      setEvento({
-        ...evento,
-        [name]: value
-      });
-    }
-    const handleSubmit = async (e) => {
-      e.preventDefault();
 
-      const isEmptyField = Object.values(evento).some(value => value === "")
-
-      if (isEmptyField) {
-        toast.error('Preencher todos os campos antes de prosseguir é obrigatório.');
-        ToastContainer
-        return;
-      }
-
-      try {
-        await axios.post('http://localhost:3001/eventos', evento)
-        limparEvento();
-        toast.success('Evento reservado com sucesso!')
-      } catch (error) {
+    try {
+      await axios.post('http://localhost:3001/eventos', evento)
+      limparEvento();
+      toast.success('Evento reservado com sucesso!')
+      }catch (error) {
         console.error(error);
         toast.error('Não foi possivel cadastrar evento, por favor tente novamente!')
       }
@@ -56,6 +56,7 @@ export default function Form() {
       <div className={styles.container}>
         <div className={styles.titulo}>
           <h1>Cadastrar novo evento</h1>
+          <ToastContainer/>
         </div>
         <form onSubmit={handleSubmit}>
           <div className={styles.subcontainer}>

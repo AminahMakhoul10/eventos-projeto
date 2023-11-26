@@ -1,6 +1,5 @@
 import Cabecalho from "@/components/Cabecalho"
 import Card2 from "@/components/Card2"
-import Navbar from "@/components/NavBar"
 import axios from "axios"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -25,7 +24,7 @@ export default function EventosHome(){
     return(
         <>
         <Cabecalho/>
-        <Navbar/>
+        
         <Card2
          key={evento.id}
          imagem={evento.imagem}

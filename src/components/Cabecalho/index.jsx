@@ -1,19 +1,18 @@
+import Link from 'next/link'
 import styles from './styles.module.css'
-
-export default function Cabecalho({}){
+export default function Cabecalho(){
     return(
         <>
-        <header className={styles.header}>
-            <div className={styles.cabecalho}>
+        <div className={styles.cabecalho}>
             <h1>Eventos</h1>
-            </div>
-            
-            <div className={styles.a}>
-            </div>
-        </header>
-        </>
+            <ul className={styles.navbar}>
+                <li>
+                    <Link href="/cadastro"> CADASTRAR EVENTO</Link>
+                </li>
 
-        
+               
+            </ul>
+        </div>
+        </>
     )
 }
-

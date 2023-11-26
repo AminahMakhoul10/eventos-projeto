@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import styles from './styles.module.css'
-import Button from '../Button'
-export default function Card2({ id, imagem, titulo, descricao, dataInicio, dataFim, local }) {
+export default function Card2({ id, imagem, titulo, descricao,}) {
 
     return (
         <>

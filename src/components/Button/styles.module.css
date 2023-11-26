@@ -2,7 +2,7 @@
 .button {
   display: inline-block;
   border-radius: 15px;
-  background-color: rgba(217, 44, 44, 0.9);
+  background-color: blueviolet;
   border: none;
   color: #FFFFFF;
   font-size: 25px;
@@ -11,5 +11,5 @@
 }
 
 .button:hover {
-  background-color: #b30000;
+  background-color: blueviolet;
 }

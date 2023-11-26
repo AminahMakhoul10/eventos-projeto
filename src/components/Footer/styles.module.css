@@ -1,9 +1,8 @@
 .footer{
-    background-color: #333;
+    background-color: blueviolet;
     color: #fff;
-    padding: 40px;
+    padding: 30px;
     text-align: center;
-    border-top: 3px solid #111;
     clear: both;
     width: 100%
 }
